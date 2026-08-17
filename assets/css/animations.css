@@ -1,0 +1,438 @@
+/* =========================================================
+   CODENOVA — ANIMATIONS
+   ========================================================= */
+
+
+/* =========================================================
+   ANIMATION D'APPARITION
+   ========================================================= */
+
+.fade-in {
+    animation: fadeIn 0.7s ease both;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   APPARITION VERS LE HAUT
+   ========================================================= */
+
+.fade-up {
+    animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   APPARITION VERS LA GAUCHE
+   ========================================================= */
+
+.fade-left {
+    animation: fadeLeft 0.7s ease both;
+}
+
+@keyframes fadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   APPARITION VERS LA DROITE
+   ========================================================= */
+
+.fade-right {
+    animation: fadeRight 0.7s ease both;
+}
+
+@keyframes fadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   SCALE
+   ========================================================= */
+
+.scale-in {
+    animation: scaleIn 0.6s ease both;
+}
+
+@keyframes scaleIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   DELAIS
+   ========================================================= */
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+.delay-5 {
+    animation-delay: 0.5s;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.glow {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(0, 217, 255, 0.15)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(0, 217, 255, 0.45)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   PULSE
+   ========================================================= */
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =========================================================
+   FLOAT
+   ========================================================= */
+
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   ROTATION LÉGÈRE
+   ========================================================= */
+
+.rotate-slow {
+    animation: rotateSlow 10s linear infinite;
+}
+
+@keyframes rotateSlow {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   SHIMMER
+   ========================================================= */
+
+.shimmer {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+    0% {
+        left: -120%;
+    }
+
+    50%,
+    100% {
+        left: 140%;
+    }
+
+}
+
+
+/* =========================================================
+   CURSEUR / TEXTE
+   ========================================================= */
+
+.typing-cursor {
+    display: inline-block;
+
+    width: 2px;
+    height: 1em;
+
+    margin-left: 4px;
+
+    vertical-align: middle;
+
+    background: var(--secondary);
+
+    animation:
+        cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   HOVER LIFT
+   ========================================================= */
+
+.hover-lift {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   HOVER GLOW
+   ========================================================= */
+
+.hover-glow {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    border-color:
+        rgba(108, 99, 255, 0.5);
+
+    box-shadow:
+        0 0 30px
+        rgba(108, 99, 255, 0.1);
+}
+
+
+/* =========================================================
+   ANIMATION DES CARTES
+   ========================================================= */
+
+.card-animate {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.card-animate.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATION DES BARRES DE PROGRESSION
+   ========================================================= */
+
+.progress-bar {
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0;
+
+    transition:
+        width 1.2s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+.progress-bar-fill.active {
+    width: var(--progress);
+}
+
+
+/* =========================================================
+   ANIMATION DES ICONES
+   ========================================================= */
+
+.icon-bounce {
+    transition:
+        transform 0.3s ease;
+}
+
+.icon-bounce:hover {
+    transform:
+        translateY(-4px)
+        scale(1.05);
+}
+
+
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeNova — Apprends. Code. Réussis. Une plateforme moderne pour apprendre la programmation.">
+  <meta name="theme-color" content="#050816">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <title>CodeNova | Apprends. Code. Réussis.</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand brand-home" aria-label="CodeNova - Accueil">
+        <img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <a href="index.html" class="nav-link active">Accueil</a>
+        <a href="cours.html" class="nav-link">Cours</a>
+        <a href="exercice.html" class="nav-link">Exercices</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="profil.html" class="nav-link">Profil</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème">☾</button>
+        <a href="connexion.html" class="btn-outline">Se connecter</a>
+        <a href="inscription.html" class="btn-primary btn-small">S’inscrire</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <strong>CodeNova</strong>
+      <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+    <nav class="mobile-nav" aria-label="Navigation mobile">
+      <a href="index.html">⌂ <span>Accueil</span></a>
+      <a href="cours.html">📚 <span>Cours</span></a>
+      <a href="exercice.html">🧩 <span>Exercices</span></a>
+      <a href="dashboard.html">📊 <span>Dashboard</span></a>
+      <a href="profil.html">👤 <span>Profil</span></a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="connexion.html" class="btn-outline">Se connecter</a>
+      <a href="inscription.html" class="btn-primary">S’inscrire</a>
+    </div>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main>
+    <section class="hero hero-codenova">
+      <div class="digital-stars" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <span class="hero-badge">PLATEFORME D’APPRENTISSAGE</span>
+        <h1>Apprends. Code.<br><span class="gradient-text">Réussis.</span></h1>
+        <p class="hero-description">
+          CodeNova est la plateforme idéale pour apprendre à coder,
+          progresser à ton rythme et construire ton avenir dans la tech.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="inscription.html" class="btn-primary btn-large">Commencer maintenant <span>→</span></a>
+          <a href="cours.html" class="btn-secondary btn-large">Voir les cours <span>▱</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="assets/images/logo.png" alt="Logo CodeNova" class="hero-logo">
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item"><span class="stat-icon blue">&lt;/&gt;</span><div><strong>50+</strong><small>Cours disponibles</small></div></div>
+        <div class="stat-item"><span class="stat-icon purple">🏆</span><div><strong>200+</strong><small>Exercices pratiques</small></div></div>
+        <div class="stat-item"><span class="stat-icon blue">♙</span><div><strong>1K+</strong><small>Apprenants</small></div></div>
+        <div class="stat-item"><span class="stat-icon purple">↗</span><div><strong>100%</strong><small>Progression</small></div></div>
+      </div>
+    </section>
+
+    <section class="popular-courses section-container" id="courses">
+      <div class="section-heading section-heading-row">
+        <div>
+          <span class="section-label">DÉCOUVRIR</span>
+          <h2>Nos cours populaires</h2>
+        </div>
+        <a href="cours.html" class="btn-secondary course-all-btn">Voir tous les cours <span>→</span></a>
+      </div>
+
+      <div class="popular-grid">
+        <a class="popular-card" href="html-cours.html">
+          <div class="course-brand html-brand">5</div>
+          <div><h3>HTML &amp; CSS</h3><p>Les bases du web</p><span>▰ Débutant</span></div>
+          <small>12 cours</small>
+        </a>
+        <a class="popular-card" href="cours.html">
+          <div class="course-brand js-brand">JS</div>
+          <div><h3>JavaScript</h3><p>De zéro à héros</p><span>▰ Intermédiaire</span></div>
+          <small>18 cours</small>
+        </a>
+        <a class="popular-card" href="cours.html">
+          <div class="course-brand react-brand">⚛</div>
+          <div><h3>React.js</h3><p>Construire des interfaces modernes</p><span>▰ Avancé</span></div>
+          <small>15 cours</small>
+        </a>
+        <a class="popular-card" href="cours.html">
+          <div class="course-brand python-brand">⌁</div>
+          <div><h3>Python</h3><p>Apprends à coder avec Python</p><span>▰ Débutant</span></div>
+          <small>14 cours</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand brand-home">
+          <img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo">
+        </a>
+        <p>Apprends à coder. Construis tes projets. Prépare ton futur.</p>
+      </div>
+      <div class="footer-links">
+        <div><h4>Navigation</h4><a href="index.html">Accueil</a><a href="cours.html">Cours</a><a href="exercice.html">Exercices</a><a href="dashboard.html">Dashboard</a></div>
+        <div><h4>Compte</h4><a href="connexion.html">Se connecter</a><a href="inscription.html">S’inscrire</a><a href="profil.html">Profil</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 CodeNova. Tous droits réservés.</p><p>Created by <strong>Miguel OKE</strong></p></div>
+  </footer>
+
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error));
+    }
+  </script>
+</body>
+</html>

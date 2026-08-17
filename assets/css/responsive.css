@@ -1,0 +1,359 @@
+/* =========================================================
+   CODENOVA — RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   GRAND ÉCRAN
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero {
+        min-height: 900px;
+    }
+
+    .hero h1 {
+        font-size: 5.5rem;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTES / PETITS LAPTOPS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .section-container,
+    .header-container,
+    .footer-container {
+        width: min(
+            calc(100% - 40px),
+            1000px
+        );
+    }
+
+    .main-nav {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 8px 9px;
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    .main-nav,
+    .header-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* GRILLES */
+
+    .features-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .courses-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE PORTRAIT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --container: 680px;
+    }
+
+
+    /* CONTENEURS */
+
+    .section-container,
+    .header-container,
+    .footer-container {
+        width: calc(100% - 32px);
+    }
+
+
+    /* TITRES */
+
+    .section-heading h2 {
+        font-size: 2.25rem;
+    }
+
+
+    /* FEATURES */
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* COURSES */
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FOOTER */
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --container: 100%;
+    }
+
+
+    /* GLOBAL */
+
+    .section-container,
+    .header-container,
+    .footer-container {
+        width: calc(100% - 28px);
+    }
+
+
+    /* HEADER */
+
+    .header-container {
+        min-height: 70px;
+    }
+
+    .brand-logo {
+        width: 37px;
+        height: 37px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.55rem;
+    }
+
+
+    /* BOUTONS */
+
+    .btn-large {
+        padding: 13px 18px;
+
+        font-size: 0.88rem;
+    }
+
+
+    /* SECTIONS */
+
+    .about-section,
+    .courses-preview {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+
+    /* FEATURES */
+
+    .feature-card {
+        padding: 24px;
+    }
+
+
+    /* COURSES */
+
+    .course-card {
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 28px);
+
+        padding: 18px 0;
+
+        font-size: 0.7rem;
+    }
+
+}
+
+
+/* =========================================================
+   PETIT SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .brand-text {
+        display: none;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero-stats {
+        gap: 12px;
+    }
+
+    .stat strong {
+        font-size: 1rem;
+    }
+
+    .stat span {
+        font-size: 0.68rem;
+    }
+
+}
+
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 340px) {
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-badge {
+        font-size: 0.62rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.75rem;
+    }
+
+}
+
+
+/* =========================================================
+   MODE PAYSAGE MOBILE
+   ========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .mobile-menu {
+        overflow-y: auto;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ — RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* =========================================================
+   AUTHENTIFICATION — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .auth-page {
+        min-height: 100vh;
+        padding-bottom: 10px;
+    }
+
+    .auth-options {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .auth-footer-page {
+        position: static !important;
+    }
+}
