@@ -1215,3 +1215,9 @@ body.light-mode .site-header{background:rgba(244,247,255,.86)}
 body.light-mode .internal-hero,body.light-mode .courses-hero,body.light-mode .hero-codenova{background:#eef3ff}
 body.light-mode .panel,body.light-mode .exercise-card,body.light-mode .dash-card,body.light-mode .profile-card,body.light-mode .form-card,.light-mode .popular-card,.light-mode .course-large-card{background:#fff;border-color:rgba(50,80,150,.14)}
 body.light-mode .form-group input,body.light-mode .form-group textarea,body.light-mode .form-group select{background:#f7f9ff;color:#111827}
+
+
+/* Auth UI: guest buttons disappear after connection without layout leftovers. */
+[hidden]{display:none!important;}
+
+.nav-link[hidden]{display:none!important;}

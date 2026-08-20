@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#050816">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="assets/icons/icon-192.png"><link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/pages.css"><link rel="stylesheet" href="assets/css/responsive.css">
+<title>Cours | CodeNova</title>
+<style>
+.detail-box{display:grid;grid-template-columns:1.5fr .8fr;gap:22px}.lesson-list{display:grid;gap:10px;margin-top:22px}.lesson{display:flex;gap:14px;align-items:center;padding:15px;border:1px solid rgba(100,130,255,.15);border-radius:14px;background:rgba(6,13,30,.7)}.lesson button{margin-left:auto}.complete-banner{margin-top:24px;padding:22px;border:1px solid rgba(72,203,140,.24);border-radius:18px;background:rgba(41,140,93,.08)}.complete-banner[hidden]{display:none}@media(max-width:800px){.detail-box{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header class="site-header"><div class="header-container"><a href="index.html" class="brand brand-home"><img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo"></a>
+<nav class="main-nav"><a href="index.html" class="nav-link">Accueil</a><a href="cours.html" class="nav-link active">Cours</a><a href="exercice.html" class="nav-link">Exercices</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="profil.html" class="nav-link">Profil</a><a href="certificats.html" class="nav-link" data-auth-only>NovaCertificates</a></nav>
+<div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème">☾</button><a href="connexion.html" class="btn-outline" data-guest-only>Se connecter</a><a href="inscription.html" class="btn-primary btn-small" data-guest-only>S’inscrire</a></div>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button></div></header>
+<main><section class="page-hero"><div class="section-container"><span class="hero-badge">PARCOURS CODENOVA</span><h1 id="courseTitle">Cours</h1><p id="courseDescription"></p></div></section>
+<section class="internal-content section-container"><div class="detail-box"><div class="dash-card"><span class="section-label">CHAPITRES</span><h2 id="courseSubtitle" style="margin-top:8px"></h2><div class="lesson-list" id="lessonList"></div>
+<div class="complete-banner" id="completeBanner" hidden><strong>🎓 Parcours terminé !</strong><p style="margin:8px 0 16px">Ton parcours est validé. Tu peux maintenant générer ton NovaCertificate.</p><a id="certificateLink" class="btn-primary" href="certificat.html">Obtenir mon NovaCertificate →</a></div></div>
+<div class="dash-card"><span class="section-label">PROGRESSION</span><h3 id="progressValue" style="font-size:2.5rem;margin-top:8px">0%</h3><p id="courseMeta"></p><div class="progress-track" style="margin-top:18px"><span id="detailProgress" style="--progress:0%"></span></div><a href="cours.html" class="btn-secondary" style="margin-top:18px">← Retour aux cours</a></div></div></section></main>
+<script src="assets/js/courses-data.js"></script><script src="assets/js/navigation.js"></script><script src="assets/js/app.js"></script><script src="assets/js/auth.js"></script>
+<script>
+const id=new URLSearchParams(location.search).get('course')||'python', course=CodeNovaCourses.find(c=>c.id===id)||CodeNovaCourses[0];
+document.title=course.title+' | CodeNova'; document.getElementById('courseTitle').textContent=course.title; document.getElementById('courseDescription').textContent=course.description;
+document.getElementById('courseSubtitle').textContent=course.level+' • '+course.lessons; document.getElementById('courseMeta').textContent=course.duration+' • '+course.category;
+const count=parseInt(course.lessons,10)||8, key='codenova-progress-'+course.id, state=JSON.parse(localStorage.getItem(key)||'{"done":[]}');
+const names=['Introduction et objectifs','Fondamentaux','Pratique guidée','Exercices essentiels','Projet pratique','Bonnes pratiques','Quiz de validation','Projet final'];
+const total=Math.min(Math.max(count,5),8);
+const list=document.getElementById('lessonList');
+function save(){state.completed=state.done.length>=total;localStorage.setItem(key,JSON.stringify(state));if(state.completed) localStorage.setItem('codenova-last-certificate',course.id);render();}
+function render(){const pct=Math.round(state.done.length/total*100);document.getElementById('progressValue').textContent=pct+'%';document.getElementById('detailProgress').style.setProperty('--progress',pct+'%');list.innerHTML=names.slice(0,total).map((n,i)=>`<div class="lesson"><span>${state.done.includes(i)?'✅':'○'}</span><div><strong>${n}</strong><div style="color:#8994ab;font-size:.8rem">Chapitre ${i+1}</div></div><button class="${state.done.includes(i)?'btn-secondary':'btn-primary'}" data-i="${i}">${state.done.includes(i)?'Terminé':'Valider'}</button></div>`).join('');list.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.i);if(!state.done.includes(i)) state.done.push(i);save();}));document.getElementById('completeBanner').hidden=pct<100;document.getElementById('certificateLink').href='certificat.html?course='+encodeURIComponent(course.id);}
+render();
+</script></body></html>

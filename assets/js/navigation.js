@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function openMenu() {
 
         mobileMenu.classList.add("open");
+        mobileMenu.setAttribute("aria-hidden", "false");
 
         menuOverlay?.classList.add("active");
 
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function closeMenu() {
 
         mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
 
         menuOverlay?.classList.remove("active");
 

@@ -1,129 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Découvre les cours de programmation CodeNova.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvre les 60 parcours CodeNova.">
 <meta name="theme-color" content="#050816">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="assets/icons/icon-192.png">
-<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/home.css">
-<link rel="stylesheet" href="assets/css/course-page.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/course-page.css"><link rel="stylesheet" href="assets/css/responsive.css">
 <title>Cours | CodeNova</title>
+<style>
+.course-search{flex:1;max-width:460px;padding:12px 16px;border:1px solid rgba(100,130,255,.2);border-radius:999px;background:rgba(5,10,25,.7);color:#fff;outline:none}
+.course-search:focus{border-color:#367cff;box-shadow:0 0 0 3px rgba(54,124,255,.12)}
+.category-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}
+.category-btn{padding:9px 14px;border-radius:999px;border:1px solid rgba(100,130,255,.18);background:rgba(5,10,25,.55);color:#aeb7ca;cursor:pointer}
+.category-btn.active{color:#fff;border-color:#367cff;background:rgba(36,100,255,.18)}
+.catalog-count{color:#8e9ab1;font-size:.9rem;margin:0 0 18px}
+.course-status.available{color:#45b5ff;border-color:rgba(45,140,255,.4)}
+.course-button{display:flex}
+</style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-container">
-    <a href="index.html" class="brand brand-home"><img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo"></a>
-    <nav class="main-nav" aria-label="Navigation principale">
-      <a href="index.html" class="nav-link">Accueil</a>
-      <a href="cours.html" class="nav-link active">Cours</a>
-      <a href="exercice.html" class="nav-link">Exercices</a>
-      <a href="dashboard.html" class="nav-link">Dashboard</a>
-      <a href="profil.html" class="nav-link">Profil</a>
-    </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème">☾</button>
-      <a href="connexion.html" class="btn-outline">Se connecter</a>
-      <a href="inscription.html" class="btn-primary btn-small">S’inscrire</a>
-    </div>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <div class="mobile-menu-header"><strong>CodeNova</strong><button class="mobile-menu-close" id="mobileMenuClose" type="button">×</button></div>
-  <nav class="mobile-nav">
-    <a href="index.html">⌂ <span>Accueil</span></a>
-    <a href="cours.html" class="active">📚 <span>Cours</span></a>
-    <a href="exercice.html">🧩 <span>Exercices</span></a>
-    <a href="dashboard.html">📊 <span>Dashboard</span></a>
-    <a href="profil.html">👤 <span>Profil</span></a>
-  </nav>
-  <div class="mobile-menu-actions"><a href="connexion.html" class="btn-outline">Se connecter</a><a href="inscription.html" class="btn-primary">S’inscrire</a></div>
-</aside>
-<div class="menu-overlay" id="menuOverlay"></div>
-
+<header class="site-header"><div class="header-container">
+<a href="index.html" class="brand brand-home"><img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo"></a>
+<nav class="main-nav" aria-label="Navigation principale">
+<a href="index.html" class="nav-link">Accueil</a><a href="cours.html" class="nav-link active">Cours</a><a href="exercice.html" class="nav-link">Exercices</a>
+<a href="dashboard.html" class="nav-link">Dashboard</a><a href="profil.html" class="nav-link">Profil</a><a href="certificats.html" class="nav-link" data-auth-only>NovaCertificates</a>
+</nav>
+<div class="header-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème">☾</button>
+<a href="connexion.html" class="btn-outline" data-guest-only>Se connecter</a><a href="inscription.html" class="btn-primary btn-small" data-guest-only>S’inscrire</a></div>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-header"><strong>CodeNova</strong><button class="mobile-menu-close" id="mobileMenuClose" type="button">×</button></div>
+<nav class="mobile-nav"><a href="index.html">⌂ <span>Accueil</span></a><a href="cours.html" class="active">📚 <span>Cours</span></a><a href="exercice.html">🧩 <span>Exercices</span></a><a href="dashboard.html">📊 <span>Dashboard</span></a><a href="profil.html">👤 <span>Profil</span></a><a href="certificats.html" data-auth-only>🏆 <span>NovaCertificates</span></a></nav>
+<div class="mobile-menu-actions"><a href="connexion.html" class="btn-outline" data-guest-only>Se connecter</a><a href="inscription.html" class="btn-primary" data-guest-only>S’inscrire</a></div></aside><div class="menu-overlay" id="menuOverlay"></div>
 <main>
-  <section class="courses-hero">
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="courses-hero-inner">
-      <span class="hero-badge">APPRENDRE &amp; PROGRESSER</span>
-      <h1>Maîtrise le code.<br><span class="gradient-text">Construis ton futur.</span></h1>
-      <p>Des parcours progressifs, des exercices pratiques et des technologies utiles pour apprendre à ton rythme.</p>
-      <div class="course-hero-stats"><span><strong>50+</strong> cours</span><span><strong>200+</strong> exercices</span><span><strong>4</strong> niveaux</span></div>
-    </div>
-  </section>
-
-  <section class="courses-content section-container">
-    <div class="courses-toolbar">
-      <div>
-        <span class="section-label">PARCOURS</span>
-        <h2>Nos cours</h2>
-      </div>
-      <div class="course-filters" role="group" aria-label="Filtrer les cours">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="beginner">Débutant</button>
-        <button class="filter-btn" data-filter="intermediate">Intermédiaire</button>
-        <button class="filter-btn" data-filter="advanced">Avancé</button>
-      </div>
-    </div>
-
-    <div class="all-courses-grid">
-      <article class="course-large-card card-animate" data-level="beginner">
-        <div class="course-large-top"><div class="large-course-icon html-icon">5</div><span class="course-status available">Disponible</span></div>
-        <div class="course-large-content"><span class="course-level">Débutant</span><h2>HTML &amp; CSS</h2><p>Apprends les bases du web et crée des pages modernes, structurées et responsives.</p><div class="course-info"><span>📚 12 leçons</span><span>⏱ ~3 heures</span></div><div class="course-progress"><div class="progress-info"><span>Progression</span><strong>0%</strong></div><div class="progress-bar"><div class="progress-bar-fill" style="--progress:0%"></div></div></div><a href="html-cours.html" class="btn-primary course-button">Commencer <span>→</span></a></div>
-      </article>
-
-      <article class="course-large-card card-animate" data-level="intermediate">
-        <div class="course-large-top"><div class="large-course-icon js-icon">JS</div><span class="course-status">Bientôt</span></div>
-        <div class="course-large-content"><span class="course-level">Intermédiaire</span><h2>JavaScript</h2><p>Apprends la logique, les interactions et les fonctionnalités dynamiques du web.</p><div class="course-info"><span>📚 18 leçons</span><span>⏱ ~6 heures</span></div><div class="course-progress"><div class="progress-info"><span>Progression</span><strong>0%</strong></div><div class="progress-bar"><div class="progress-bar-fill" style="--progress:0%"></div></div></div><button class="btn-secondary course-button" disabled>Bientôt disponible</button></div>
-      </article>
-
-      <article class="course-large-card card-animate" data-level="advanced">
-        <div class="course-large-top"><div class="large-course-icon react-icon">⚛</div><span class="course-status">Bientôt</span></div>
-        <div class="course-large-content"><span class="course-level">Avancé</span><h2>React.js</h2><p>Construis des interfaces modernes et découvre les bases du développement front-end avancé.</p><div class="course-info"><span>📚 15 leçons</span><span>⏱ ~7 heures</span></div><div class="course-progress"><div class="progress-info"><span>Progression</span><strong>0%</strong></div><div class="progress-bar"><div class="progress-bar-fill" style="--progress:0%"></div></div></div><button class="btn-secondary course-button" disabled>Bientôt disponible</button></div>
-      </article>
-
-      <article class="course-large-card card-animate" data-level="beginner">
-        <div class="course-large-top"><div class="large-course-icon python-icon">⌁</div><span class="course-status">Bientôt</span></div>
-        <div class="course-large-content"><span class="course-level">Débutant</span><h2>Python</h2><p>Découvre un langage polyvalent utilisé pour les projets, l'automatisation et la data.</p><div class="course-info"><span>📚 14 leçons</span><span>⏱ ~5 heures</span></div><div class="course-progress"><div class="progress-info"><span>Progression</span><strong>0%</strong></div><div class="progress-bar"><div class="progress-bar-fill" style="--progress:0%"></div></div></div><button class="btn-secondary course-button" disabled>Bientôt disponible</button></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="course-cta">
-    <div><span class="section-label">PRÊT À COMMENCER ?</span><h2>Ton parcours CodeNova<br><span class="gradient-text">commence maintenant.</span></h2><p>Commence par HTML &amp; CSS puis avance progressivement vers JavaScript et les technologies modernes.</p><a href="html-cours.html" class="btn-primary btn-large">Commencer HTML <span>→</span></a></div>
-  </section>
+<section class="courses-hero"><div class="hero-grid" aria-hidden="true"></div><div class="courses-hero-inner">
+<span class="hero-badge">60 PARCOURS D’APPRENTISSAGE</span><h1>Maîtrise le code.<br><span class="gradient-text">Construis ton futur.</span></h1>
+<p>Des parcours progressifs, des exercices pratiques et des projets pour apprendre à ton rythme.</p>
+<div class="course-hero-stats"><span><strong>60</strong> cours</span><span><strong>200+</strong> exercices</span><span><strong>4</strong> niveaux</span></div></div></section>
+<section class="courses-content section-container">
+<div class="courses-toolbar"><div><span class="section-label">PARCOURS</span><h2>Notre catalogue</h2></div>
+<input id="courseSearch" class="course-search" type="search" placeholder="🔎 Rechercher un cours..." aria-label="Rechercher un cours"></div>
+<div class="category-row" id="categoryRow"></div>
+<div class="course-filters" role="group" aria-label="Filtrer les niveaux">
+<button class="filter-btn active" data-filter="all">Tous</button><button class="filter-btn" data-filter="beginner">Débutant</button>
+<button class="filter-btn" data-filter="intermediate">Intermédiaire</button><button class="filter-btn" data-filter="advanced">Avancé</button>
+</div>
+<p class="catalog-count" id="catalogCount"></p>
+<div class="all-courses-grid" id="courseGrid"></div>
+</section>
+<section class="course-cta"><div><span class="section-label">NOUVEAU</span><h2>Termine un parcours<br><span class="gradient-text">et obtiens ton NovaCertificate.</span></h2><p>À la fin d’un cours, valide ton parcours pour générer une attestation d’apprentissage personnelle avec un identifiant unique.</p><a href="profil.html" class="btn-primary btn-large">Voir mes attestations <span>→</span></a></div></section>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-brand"><a href="index.html" class="brand brand-home"><img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo"></a><p>Apprends à coder. Construis tes projets. Prépare ton futur.</p></div>
-    <div class="footer-links"><div><h4>Navigation</h4><a href="index.html">Accueil</a><a href="cours.html">Cours</a><a href="exercice.html">Exercices</a><a href="dashboard.html">Dashboard</a></div><div><h4>Compte</h4><a href="connexion.html">Se connecter</a><a href="inscription.html">S’inscrire</a><a href="profil.html">Profil</a></div></div>
-  </div>
-  <div class="footer-bottom"><p>© 2026 CodeNova. Tous droits réservés.</p><p>Created by <strong>Miguel OKE</strong></p></div>
-</footer>
-
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/animation.js"></script>
-<script src="assets/js/app.js"></script>
+<footer class="site-footer"><div class="footer-container"><div class="footer-brand"><a href="index.html" class="brand brand-home"><img src="assets/images/logo.png" alt="Logo CodeNova" class="brand-logo"></a><p>Apprends à coder. Construis tes projets. Prépare ton futur.</p></div>
+<div class="footer-links"><div><h4>Navigation</h4><a href="index.html">Accueil</a><a href="cours.html">Cours</a><a href="exercice.html">Exercices</a><a href="dashboard.html">Dashboard</a></div><div><h4>Compte</h4><a href="connexion.html">Se connecter</a><a href="inscription.html">S’inscrire</a><a href="profil.html">Profil</a></div></div></div>
+<div class="footer-bottom"><p>© <span data-current-year></span> CodeNova. Tous droits réservés.</p><p>Created by <strong>Miguel OKE</strong></p></div></footer>
+<script src="assets/js/courses-data.js"></script><script src="assets/js/navigation.js"></script><script src="assets/js/animation.js"></script><script src="assets/js/app.js"></script><script src="assets/js/auth.js"></script>
 <script>
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    const filter = btn.dataset.filter;
-    document.querySelectorAll(".course-large-card").forEach(card => {
-      card.style.display = filter === "all" || card.dataset.level === filter ? "" : "none";
-    });
-  });
-});
-if ("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(console.error));
-</script>
-</body>
-</html>
+const grid=document.getElementById('courseGrid'), search=document.getElementById('courseSearch'), count=document.getElementById('catalogCount'), catRow=document.getElementById('categoryRow');
+const categories=['Toutes',...new Set(CodeNovaCourses.map(c=>c.category))]; let activeLevel='all',activeCategory='Toutes';
+categories.forEach((cat,i)=>{const b=document.createElement('button');b.className='category-btn'+(i===0?' active':'');b.textContent=cat;b.dataset.category=cat;b.addEventListener('click',()=>{document.querySelectorAll('.category-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');activeCategory=cat;render();});catRow.appendChild(b);});
+document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');activeLevel=b.dataset.filter;render();}));
+search.addEventListener('input',render);
+function slugKey(c){return c.id.replace(/[^a-z0-9-]/g,'');}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const items=CodeNovaCourses.filter(c=>(activeLevel==='all'||c.levelKey===activeLevel)&&(activeCategory==='Toutes'||c.category===activeCategory)&&(!q||c.title.toLowerCase().includes(q)||c.category.toLowerCase().includes(q)));
+ count.textContent=`${items.length} cours affiché${items.length>1?'s':''}`;
+ grid.innerHTML=items.map(c=>{
+  const done=JSON.parse(localStorage.getItem('codenova-progress-'+c.id)||'{"completed":false}').completed;
+  return `<article class="course-large-card card-animate" data-level="${c.levelKey}">
+   <div class="course-large-top"><div class="large-course-icon project-icon">${c.icon}</div><span class="course-status available">${done?'Terminé':'Disponible'}</span></div>
+   <div class="course-large-content"><span class="course-level">${c.level}</span><h2>${c.title}</h2><p>${c.description}</p>
+   <div class="course-info"><span>📚 ${c.lessons}</span><span>⏱ ${c.duration}</span></div>
+   <div class="course-progress"><div class="progress-info"><span>Progression</span><strong>${done?'100':'0'}%</strong></div><div class="progress-bar"><div class="progress-bar-fill" style="--progress:${done?'100':'0'}%"></div></div></div>
+   <a href="${c.url}" class="btn-primary course-button">${done?'Revoir le cours':'Commencer'} <span>→</span></a></div></article>`; }).join('');
+ if(!items.length) grid.innerHTML='<div class="course-large-card"><h2>Aucun cours trouvé</h2><p>Essaie un autre mot-clé ou une autre catégorie.</p></div>';
+}
+render();
+</script></body></html>

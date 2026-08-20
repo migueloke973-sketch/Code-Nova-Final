@@ -29,13 +29,13 @@
         <a href="cours.html" class="nav-link">Cours</a>
         <a href="exercice.html" class="nav-link">Exercices</a>
         <a href="dashboard.html" class="nav-link">Dashboard</a>
-        <a href="profil.html" class="nav-link">Profil</a>
+        <a href="profil.html" class="nav-link">Profil</a><a href="certificats.html" class="nav-link" data-auth-only>NovaCertificates</a>
       </nav>
 
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer le thème">☾</button>
-        <a href="connexion.html" class="btn-outline">Se connecter</a>
-        <a href="inscription.html" class="btn-primary btn-small">S’inscrire</a>
+        <a href="connexion.html" class="btn-outline" data-guest-only>Se connecter</a>
+        <a href="inscription.html" class="btn-primary btn-small" data-guest-only>S’inscrire</a>
       </div>
 
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -54,11 +54,11 @@
       <a href="cours.html">📚 <span>Cours</span></a>
       <a href="exercice.html">🧩 <span>Exercices</span></a>
       <a href="dashboard.html">📊 <span>Dashboard</span></a>
-      <a href="profil.html">👤 <span>Profil</span></a>
+      <a href="profil.html">👤 <span>Profil</span></a><a href="certificats.html" data-auth-only>🏆 <span>NovaCertificates</span></a>
     </nav>
     <div class="mobile-menu-actions">
-      <a href="connexion.html" class="btn-outline">Se connecter</a>
-      <a href="inscription.html" class="btn-primary">S’inscrire</a>
+      <a href="connexion.html" class="btn-outline" data-guest-only>Se connecter</a>
+      <a href="inscription.html" class="btn-primary" data-guest-only>S’inscrire</a>
     </div>
   </aside>
   <div class="menu-overlay" id="menuOverlay"></div>
@@ -147,9 +147,9 @@
   <script src="assets/js/navigation.js"></script>
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/auth.js"></script>
   <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error));
+    
     }
   </script>
 </body>
